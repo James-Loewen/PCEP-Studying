@@ -7,7 +7,7 @@ print_header('for/else and while/else loops')
 
 '''
 An else clause after a for or while loop will be executed:
-- if the loops is fully completed (i.e., not broken with a break statement)
+- if the loop is fully completed (i.e., not broken with a break statement)
 - after the loop completes
 - exactly once
 '''
