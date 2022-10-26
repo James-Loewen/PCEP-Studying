@@ -1,9 +1,4 @@
-def print_header(title, width=80, char='#'):
-    print(char * width)
-    print(f"##{title.center(width - 4, ' ')}##")
-    print(char * width)
-    print()
-
+from utils.utils import print_header
 ################################################################################
 ##                             List Comprehension                             ##
 ################################################################################
