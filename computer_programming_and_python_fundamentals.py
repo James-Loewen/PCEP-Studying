@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from utils.utils import print_header
 
 """
@@ -222,3 +223,24 @@ l_string = 'False'
 l_bool = bool(l_string)
 print(type(l_bool), l_bool)
 # <class 'bool'> True
+
+# Here's a ridiculous example:
+class SuperTrue:
+    is_true = True
+
+    def __init__(self, essence=True):
+        self.essence = essence
+    
+    def __str__(self):
+        return "You must understand, I am veritably infallible!"
+    
+    # What's this sneaky little guy?
+    def __len__(self):
+        return 0
+
+very_very_true = SuperTrue()
+
+print(very_very_true)
+# You must understand, I am veritably infallible!
+print(bool(very_very_true))
+# False
