@@ -96,3 +96,129 @@ print(rgb_to_hex((r, g, b)))
 ##                            Scientific Notation                            ##
 ###############################################################################
 print_header('Scientific Notation')
+
+pass
+
+###############################################################################
+##                                Type Casting                               ##
+###############################################################################
+print_header('Type Casting')
+
+"""
+Type casting is the process of taking one data type and changing it into
+another type. In Python this is done with three (sorta four) different
+built-in functions: str(), int(), float(), and maybe bool().
+"""
+
+"""
+int() tries to construct an integer number from an integer literal, a
+float literal (by removing all decimals), or a string literal (providing
+the string represents a whole number)
+"""
+
+a_string = "12"
+a_int = int(a_string)
+print(type(a_int), a_int)
+# <class 'int'> 12
+
+b_float = 3.14
+b_int = int(b_float)
+print(type(b_int), b_int)
+# <class 'int'> 3
+
+# This would result in a ValueError
+# c_string = "twenty"
+# c_int = int(c_string)
+
+# This also results in a ValueError
+# d_string = "15.125"
+# d_int = int(d_string)
+
+# But this does not:
+d_string = "15.125"
+d_int = int(float(d_string))
+print(type(d_int), d_int)
+# <class 'int'> 15
+
+"""
+float() tries to construct a float number from an integer literal, a
+float literal or a string literal (providing the string represents a
+float or an integer)
+"""
+
+d_string = "15.125"
+d_float = float(d_string)
+print(type(d_float), d_float)
+# <class 'float'> 15.125
+
+e_int = 200
+e_float = float(e_int)
+print(type(e_float), e_float)
+# <class 'float'> 200.0
+
+"""
+str() tries to construct a string from a wide variety of data types,
+including strings, integer literals and float literals
+
+This one is pretty robust and way less prone to errors than the previous
+two.
+"""
+
+f_int = 42
+f_string = str(f_int)
+print(type(f_string), f_string)
+# <class 'str'> 42
+
+g_float = 35.978
+g_string = str(g_float)
+print(type(g_string), g_string)
+# <class 'str> 35.978
+
+h_list = [1, 2, 3, "hello, there", 4]
+h_string = str(h_list)
+print(type(h_string), h_string)
+# <class 'str'> [1, 2, 3, 'hello, there', 4]
+
+i_tuple = (4, 5, 1)
+i_string = str(i_tuple)
+print(type(i_string), i_string)
+# <class 'str'> (4, 5, 1)
+
+j_dictionary = {
+    'one': 1,
+    'two': 2,
+    'list': [4, 5, 6],
+    'dict': {
+        'nestable': True,
+        'intuitive': False,
+    }
+}
+j_string = str(j_dictionary)
+print(type(j_string), j_string)
+# <class 'str'> {'one': 1, 'two': 2, 'list': [4, 5, 6], 'dict': {'nestable': True, 'intuitive': False}}
+
+"""
+bool() is a weird one because it will always return either True or False
+depending on the 'truthiness' of whatever is passed into it.
+
+Truth testing in Python can be slightly complicated, but you can
+summarize it by saying most non-empty, non-zero values evaluate to 
+True, while empty sequences/collections, any form of zero, None, and 
+False evaluate to False.
+"""
+
+# This works, but not for the reason you may immediately suspect
+# Python doesn't actually recognize or understand the meaning of this
+# string
+k_string = 'True'
+king_k_bool = bool(k_string)
+print(type(king_k_bool), king_k_bool)
+# <class 'bool'> True
+
+# This illustrates why the above works and why we have to be careful
+# with variable names and string content because we can trick ourselves
+# into thinking Python is smarter than it is.
+l_string = 'False'
+l_bool = bool(l_string)
+print(type(l_bool), l_bool)
+# <class 'bool'> True
