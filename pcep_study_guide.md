@@ -64,3 +64,7 @@ Things I need to study:
 ---
 
 ## [Functions and Exceptions](./functions_and_exceptions.py)
+
+Things I need to study:
+- `*args` and `**kwargs`
+    - Remember: `*` is for tuples/lists. `**` is for dictionaries.
