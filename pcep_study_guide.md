@@ -68,3 +68,6 @@ Things I need to study:
 Things I need to study:
 - `*args` and `**kwargs`
     - Remember: `*` is for tuples/lists. `**` is for dictionaries.
+    - If you're passing positional and keyword arguments to a function, the positional arguments must ***always*** come first.
+- A function can ever return a single **object**, but that object can be a collection of multiple values, so the following is `True`:
+    - A python function can return multiple values.
