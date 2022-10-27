@@ -1,10 +1,11 @@
-from tabnanny import verbose
+from sys import float_info
 from utils.utils import print_header
 
-"""
+edge = """
 For some edge-case syntax, see ./control_flow.py
 for some one-line conditional statements
 """
+print(edge)
 
 ###############################################################################
 ##                          Base x Number Systems &                          ##
@@ -12,7 +13,7 @@ for some one-line conditional statements
 ###############################################################################
 print_header('Base x Number Systems &\nFloating Point Accuracy')
 
-"""
+num_system_background = """
 Our standard arithmetic number system is base 10, or 'Decimal.' The
 number 0.125 is equal to (1/10 + 2/100 + 5/1000)
 
@@ -38,6 +39,7 @@ J ~= 2**N / 10
 Because J has *exactly* 53 bits (is >= 2**52 but < 2**53), the best
 value for N is 56
 """
+print(num_system_background)
 
 x = .1
 y = .3
@@ -51,7 +53,7 @@ print(f'{x:.17f}')  # This prints out '0.10000000000000001'
 ###############################################################################
 print_header('Hexadecimal and Octal')
 
-"""
+octal_info = """
 The Octal number system isn't widely used today, but it was very useful
 with early computing. Words like 8-bit and 16-bit are derived from the
 octal number system. Fun fact, it's super easy to convert between binary
@@ -61,8 +63,9 @@ an octal number. E.g., 111101100010(base 2) == 7542(base 8)
      7   5   4   2
 Today, almost all systems use the hexadecimal system these days...
 """
+print(octal_info)
 
-"""
+hex_info = """
 Hexadecimal numbers are super useful. We use them for representing rgb
 colors. For example, rgb(233, 150, 122) can be represented as the
 hexadecimal grouping #E9967A where E9 == 233, 96 == 150, and 7A == 122.
@@ -81,6 +84,7 @@ capitalized, but I think it looks nicer). If we count to 20(base 16),
 this is what it looks like:
 0 1 2 3 4 5 6 7 8 9 A B C D E F 10 11 12 13 14
 """
+print(hex_info)
 
 # HTML color 'darksalmon'
 r, g, b = 233, 150, 122
@@ -105,17 +109,19 @@ pass
 ###############################################################################
 print_header('Type Casting')
 
-"""
+type_casting = """
 Type casting is the process of taking one data type and changing it into
 another type. In Python this is done with three (sorta four) different
 built-in functions: str(), int(), float(), and maybe bool().
 """
+print(type_casting)
 
-"""
+int_info = """
 int() tries to construct an integer number from an integer literal, a
 float literal (by removing all decimals), or a string literal (providing
 the string represents a whole number)
 """
+print(int_info)
 
 a_string = "12"
 a_int = int(a_string)
@@ -127,13 +133,16 @@ b_int = int(b_float)
 print(type(b_int), b_int)
 # <class 'int'> 3
 
-# This would result in a ValueError
-# c_string = "twenty"
-# c_int = int(c_string)
+int_errors = """
+This would result in a ValueError
+c_string = "twenty"
+c_int = int(c_string)
 
-# This also results in a ValueError
-# d_string = "15.125"
-# d_int = int(d_string)
+This also results in a ValueError
+d_string = "15.125"
+d_int = int(d_string)
+"""
+print(int_errors)
 
 # But this does not:
 d_string = "15.125"
@@ -141,11 +150,12 @@ d_int = int(float(d_string))
 print(type(d_int), d_int)
 # <class 'int'> 15
 
-"""
+float_info = """
 float() tries to construct a float number from an integer literal, a
 float literal or a string literal (providing the string represents a
 float or an integer)
 """
+print(float_info)
 
 d_string = "15.125"
 d_float = float(d_string)
@@ -157,13 +167,14 @@ e_float = float(e_int)
 print(type(e_float), e_float)
 # <class 'float'> 200.0
 
-"""
+str_info = """
 str() tries to construct a string from a wide variety of data types,
 including strings, integer literals and float literals
 
 This one is pretty robust and way less prone to errors than the previous
 two.
 """
+print(str_info)
 
 f_int = 42
 f_string = str(f_int)
@@ -198,7 +209,7 @@ j_string = str(j_dictionary)
 print(type(j_string), j_string)
 # <class 'str'> {'one': 1, 'two': 2, 'list': [4, 5, 6], 'dict': {'nestable': True, 'intuitive': False}}
 
-"""
+bool_info = """
 bool() is a weird one because it will always return either True or False
 depending on the 'truthiness' of whatever is passed into it.
 
@@ -207,6 +218,7 @@ summarize it by saying most non-empty, non-zero values evaluate to
 True, while empty sequences/collections, any form of zero, None, and 
 False evaluate to False.
 """
+print(bool_info)
 
 # This works, but not for the reason you may immediately suspect
 # Python doesn't actually recognize or understand the meaning of this
