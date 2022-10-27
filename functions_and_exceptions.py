@@ -5,7 +5,7 @@ from utils.utils import print_header
 ###############################################################################
 print_header('star operator and *args')
 
-"""
+star_intro = """
 When writing Python functions, there are special ways to accept an
 indefinite or unspecified number of parameters. In the function
 declaration we use either the `*args` or `**kwargs` keywords (the number
@@ -13,14 +13,16 @@ of asterisks before each is important). Truthfully, the asterisks are
 all that matter, but we use 'args' and 'kwargs' because it's convention
 and that helps with readability.
 """
+print(star_intro)
 
-"""
+args_info = """
 The *args keyword/syntax expects 0 or more *positional* parameters. This
 means that they cannot be keyword parameters, for example, name="James".
 The parameters don't have to be of a specific type, though it is almost
 always the case that functions using the *args syntax expect parameters
 of the same type.
 """
+print(args_info)
 
 # parameters passed to this function get 'packed' into the variable args
 def add_indef(*args):
@@ -33,11 +35,12 @@ sum_of_two = add_indef(10, 30)          # This works
 sum_of_five = add_indef(1, 3, 4, 6, 7)  # This also works
 sum_of_zero = add_indef()               # This also works
 
-"""
+pack_unpack = """
 The asterisk is a unary operator that either 'packs' or 'unpacks' the
 variable that it prefixes. Above is an example of packing, below is an 
 example of unpacking.
 """
+print(pack_unpack)
 
 a = ["Hello", "there", "I'm", "a", "list"]
 
@@ -54,39 +57,46 @@ x, y, z = (1, 2, 3)
 
 # These are ugly, but perfectly fine python code:
 *x, y, z = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-"""
+star1 = """
 x -> [0, 1, 2, 3, 4, 5, 6, 7]
 y -> 8
 z -> 9
 """
+print(star1)
+
 x, *y, z = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-"""
+star2 = """
 x -> 0
 y -> [1, 2, 3, 4, 5, 6, 7, 8]
 z -> 9
 """
+print(star2)
+
 x, y, *z = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-"""
+star3 = """
 x -> 0
 y -> 1
 z -> [2, 3, 4, 5, 6, 7, 8, 9]
 """
+print(star3)
 
-"""
+star4 = """
 This would result in an error:
 *x, *y, z = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 SyntaxError: multiple starred expressions in assignment
 """
+print(star4)
 
 ###############################################################################
 ##                          double star and **kwargs                         ##
 ###############################################################################
 print_header('double star and **kwargs')
 
-"""
+double_info = """
 The ** operator is also used for packing and unpacking, HOWEVER, it is 
 ONLY used with python dictionaries.
 """
+print(double_info)
 
 def print_keys_and_values(**kwargs):
     # kwargs is the name of the dictionary
@@ -107,7 +117,7 @@ cat2 Mako
 ###############################################################################
 print_header('name scopes')
 
-"""
+legb = """
 The acronym for remembering how Python resolves scope is LEGB, which
 stands for "Local, Enclosing, Global, Built-in."
 
@@ -129,8 +139,9 @@ keywords, that are built-in to Python. Functions such as round() and
 abs() are in the built-in scope. Anything that you can use without first
 defining yourself is contained in the built-in scope.
 """
+print(legb)
 
-"""
+global_keyword = """
 The keyword global can be used to override a new variable's scope so
 that it can be accessed from anywhere within the global scope. The
 syntax is a bit weird for Python and looks a little bit like how you
@@ -139,12 +150,13 @@ that because of the way Python handles function declarations, (i.e.,
 doesn't run the function body until it has been called), a global
 variable won't exist until the function it's created in is called.
 """
+print(global_keyword)
 
 def func():
     global new_var
     new_var = "Available everywhere"
 
-print(new_var)
+# print(new_var)
 # NameError because new_var doesn't exist yet.
 
 func()

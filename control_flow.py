@@ -5,12 +5,13 @@ from utils.utils import print_header
 ################################################################################
 print_header('for/else and while/else loops')
 
-'''
+loop_else = """
 An else clause after a for or while loop will be executed:
 - if the loop is fully completed (i.e., not broken with a break statement)
 - after the loop completes
 - exactly once
-'''
+"""
+print(loop_else)
 
 # Without for/else:
 fruits = ['apple', 'pear', 'grapefruit', 'orange', 'mango', 'kiwi']
@@ -45,9 +46,7 @@ else:
 ################################################################################
 ##                     Weird/one-line conditionals/loops                      ##
 ################################################################################
-print('#' * 80)
-print(f"##{'Weird/one-line conditionals/loops'.center(76, ' ')}##")
-print('#' * 80)
+print_header('Weird/one-line conditionals/loops')
 
 # One-line conditional:
 is_weird = True
