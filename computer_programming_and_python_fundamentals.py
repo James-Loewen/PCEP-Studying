@@ -7,6 +7,22 @@ for some one-line conditional statements
 print(edge)
 
 ###############################################################################
+##                       Compilation vs Interpretation                       ##
+###############################################################################
+print_header('Compilation vs Interpretation')
+
+print("""
+Python's 'lexis' is its list of keywords like for, while, def, class,
+continue, etc...
+""")
+
+print("""
+At the end of the day, in order for our program (written in some high-
+level programming language) to run, it needs to be converted into
+machine language. This is done either via compilation or interpretation.
+""")
+
+###############################################################################
 ##                          Base x Number Systems &                          ##
 ##                          Floating Point Accuracy                          ##
 ###############################################################################
