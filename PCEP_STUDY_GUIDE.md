@@ -126,6 +126,7 @@ Things I need to study:
     - If you're passing positional and keyword arguments to a function, the positional arguments must ***always*** come first.
 - A function can ever return a single **object**, but that object can be a collection of multiple values, so the following is `True`:
     - A python function can return multiple values.
+<<<<<<< HEAD:pcep_study_guide.md
 
 **Function Invocation Order of Operations:**
 1. Python checks whether the name is *legal* and is defined in memory.
@@ -133,3 +134,5 @@ Things I need to study:
 3. Python leaves the current line and goes to the function definition, passing in the arguments present in the invocation.
 4. The lines of the function are run.
 5. Python returns to where it was (i.e., the line after the invocation) and continues on with the code.
+=======
+>>>>>>> 9d3fec20b13e9d6697eba36dc384730972bfb5e4:PCEP_STUDY_GUIDE.md
